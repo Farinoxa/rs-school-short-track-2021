@@ -9,6 +9,8 @@
  * For n = 152, the output should be 52
  *
  */
+let indexForDell = [];
+
 function deleteDigit(n) {
   const nArr = [...n.toString()];
   const nArrMax = [...n.toString()];
