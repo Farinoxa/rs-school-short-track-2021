@@ -9,25 +9,11 @@
  *
  * The result should be [-1, 150, 160, 170, -1, -1, 180, 190]
  */
-const sortedStock = [];
-const resultStock = [];
 
 function sortByHeight(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== -1) {
-      sortedStock.push(arr[i]);
-    }
-  }
-  sortedStock.sort((a, b) => a - b);
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === -1) {
-      resultStock.push(arr[i]);
-    } else {
-      resultStock.push(sortedStock[0]);
-      sortedStock.shift();
-    }
-  }
-  return resultStock;
+  const sortArray = arr.filter((v) => v !== -1).sort((a, b) => a - b);
+  arr.forEach((v, i) => v === -1 && sortArray.splice(i, 0, -1));
+  return sortArray;
 }
 
 module.exports = sortByHeight;

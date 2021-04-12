@@ -19,6 +19,7 @@ function encodeLine(str) {
       result.push(arr[i]);
     } else {
       result.push(n + arr[i]);
+      n = 1;
     }
   }
   return result.join('');
